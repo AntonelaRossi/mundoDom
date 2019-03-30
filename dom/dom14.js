@@ -12,7 +12,7 @@ var numeros = [];
 var crecer = 0;
 
 for (let i = 0; i < 100; i++) {
-    crecer ++
+    crecer++
     numeros.push(crecer)
 }
 
@@ -22,19 +22,25 @@ var laUl = document.createElement("ul");
 
 for (let i = 0; i < numeros.length; i++) {
     var cadaLi = document.createElement("li");
-    cadaLi.textContent = "Item " + numeros[ i];
+    cadaLi.textContent = "Item " + numeros[i];
     console.log(cadaLi);
     laUl.appendChild(cadaLi);
-    
+
+    if (numeros[i] % 2 !== 0) {
+        cadaLi.style.color = "red";
+    } else if (numeros[i] % 2 === 0) {
+        cadaLi.style.color = "blue";
+    }
 }
 
 elBody.appendChild(laUl)
 
-if (cadaLi%2 ===0) {
-    cadaLi.style.color = "verde";
-} else {
-    cadaLi.style.color = "naranja"
-}
+
+
+
+
+
+
 
 //Agregar la etiqueta script
 //Seleccionar el elemento body
