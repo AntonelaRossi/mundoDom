@@ -1,0 +1,32 @@
+body {
+  font-size: 14px;
+}
+
+p {
+  font-size: 18px;
+  color: #fc5656;
+}
+
+.movie-info h2.title {
+  color: #fc5656;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.movie-info .written-by strong {
+  font-weight: 900;
+  color: blue;
+}
+.movie-info .written-by span {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.movie-info #rated {
+  opacity: 0.5;
+  background-color: pink;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -72,6 +72,7 @@ botonFiltro.onclick = function (e) {
 
             var objetoDino = document.createElement("img")
             objetoDino.setAttribute("src", productos[i].img);
+            objetoDino.classList.add("imagenes")
             lista.appendChild(nombreDino)
             lista.appendChild(objetoDino)
         }
@@ -84,6 +85,7 @@ botonFiltro.onclick = function (e) {
 
             var objetoDino = document.createElement("img")
             objetoDino.setAttribute("src", productos[i].img);
+            objetoDino.classList.add("imagenes")
             lista.appendChild(nombreDino)
             lista.appendChild(objetoDino)
         }
@@ -96,6 +98,7 @@ botonFiltro.onclick = function (e) {
 
             var objetoDino = document.createElement("img")
             objetoDino.setAttribute("src", productos[i].img);
+            objetoDino.classList.add("imagenes")
             lista.appendChild(nombreDino)
             lista.appendChild(objetoDino)
         }
@@ -107,3 +110,4 @@ botonFiltro.onclick = function (e) {
 }
 
 
+// TOCA EL PADRE

@@ -1,0 +1,17 @@
+$medida-fuente: 18px;
+
+@import "colors";
+@import "mixins";
+
+body {
+    font-size: 14px;
+}
+
+p {
+    font-size: $medida-fuente;
+    color: $primary-color;
+}
+
+@import "movie_info";
+// aca importo el parcial de _movie_info.scss no es necesario el guion adelante ni la extension
+

@@ -1,0 +1,17 @@
+@mixin opacidad($opacity-value) { //puede tener 1 o mas parametros, o ninguno
+    opacity: $opacity-value;
+    background-color: pink;
+}
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin v-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
