@@ -7,6 +7,11 @@ p {
   color: #fc5656;
 }
 
+#movie {
+  display: flex;
+  justify-content: center;
+}
+
 .movie-info h2.title {
   color: #fc5656;
   font-weight: 900;

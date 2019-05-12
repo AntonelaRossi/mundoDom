@@ -12,6 +12,11 @@ p {
     color: $primary-color;
 }
 
+#movie {
+    display: flex;
+    justify-content: center;
+}
+
 @import "movie_info";
 // aca importo el parcial de _movie_info.scss no es necesario el guion adelante ni la extension
 
