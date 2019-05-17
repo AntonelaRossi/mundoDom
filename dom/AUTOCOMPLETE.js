@@ -38,14 +38,14 @@ const input = document.getElementById("autocomplete-input");
 input.onkeyup = function () {
     console.log("key up", input.value)
     const ul = document.querySelector('ul');  //ul#autocomplete-results
-    
+
     if (input.value) {
 
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=a70dbfe19b800809dfdd3e89e8532c9e&query=${input.value}`)
             .then(res => res.json()) // interprete los datos como json
             .then(data => {
                 console.log(data, input.value)
-               
+
                 ul.style.display = "block";
                 let lis = '';
 
@@ -64,9 +64,36 @@ input.onkeyup = function () {
             });
     } else {
         ul.style.display = "none";
+
+
     }
-  
-}
+
+    // esto es para seleccionar con click!
+    document
+        .querySelectorAll('li.list-item')
+        .forEach(function (li) {
+            li.addEventListener('click', function (e) {
+                const movieId = e.target.id //target te dice el elemento donde hice click
+                input.value = e.target.innerHTML;
+                ul.style.display = 'none';
+
+                fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
+                    .then(res => res.json()) // interprete los datos como json
+                    .then(data => {
+
+
+                    })
+                    })
+            })
+
+
+
+
+
+
+
+        }
+
 
 
 
