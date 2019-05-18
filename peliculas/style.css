@@ -8,17 +8,19 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.loguito {
-    background-color: rgb(59, 55, 55);
-    width: 90px;
-    height: 80px;
-}
-
 #search {
     width: 100%;
-    height: 80px;
+    height: 100px;
     border: 0;
-    padding-left: 30px;
+    /* padding-left: 30px; */
+    font-size: 20px;
+}
+
+#iconSearch {
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+
 }
 
 .nav-bar {
@@ -27,18 +29,30 @@ body {
     width: 90px;
 }
 
-#popular, #top, #proximo, #novedades {
+#popular, #top, #proximo, #novedades, .loguito  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: white;
     text-align: center;
     border: 0.1px solid grey;
     width: 90px;
-    height: 80px;
+    height: 100px;
 }
+
+.icons {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
 
 .input {
     background-color: white;
+    display: flex;
+    align-items: center;
     width: 100%;
-    height: 80px;
+    height: 100px;
 }
 
 .contenedor-general {
@@ -49,7 +63,7 @@ body {
 #banner {
     background-color: yellow;
     width: 100%;
-    height: 320px;
+    height: 400px;
 }
 
 #contenedor-peliculas {
