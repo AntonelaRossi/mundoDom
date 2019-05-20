@@ -1,0 +1,36 @@
+
+// .contenedor-nav {
+//     position: fixed;
+     
+// }
+
+.nav-bar {
+    font-size: 10px;
+    width: 90px;
+    position: fixed;
+     
+}
+
+.loguito {
+    
+    background-color: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .img {
+    width: 40px;
+    height: auto;
+    fill: white;
+    }
+}
+
+#popular, #top-rated, #upcoming, #now-playing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: grey;
+    text-align: center;
+    border-bottom: 0.1px solid rgb(196, 195, 195);
+    width: 90px;
+    height: 100px;
+}

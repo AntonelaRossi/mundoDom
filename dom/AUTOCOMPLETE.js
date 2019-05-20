@@ -41,7 +41,7 @@ input.onkeyup = function () {
 
     if (input.value) {
 
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=a70dbfe19b800809dfdd3e89e8532c9e&query=${input.value}`)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=a70dbfe19b800809dfdd3e89e8532c9e`)
             .then(res => res.json()) // interprete los datos como json
             .then(data => {
                 console.log(data, input.value)
