@@ -4,11 +4,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.modal {
+#modal {
   display: flex;
   justify-content: center;
 }
-.modal .contenedor-blur {
+#modal .contenedor-blur {
   position: absolute;
   z-index: 5;
   width: 100vw;
@@ -17,7 +17,7 @@ body {
   filter: blur(6px);
   opacity: 0.8;
 }
-.modal .contenedor-modal {
+#modal .contenedor-modal {
   position: absolute;
   margin-top: 30px;
   z-index: 10;
@@ -26,25 +26,25 @@ body {
   background-color: #f8f7f7;
   border-radius: 10px;
 }
-.modal .contenedor-modal .cerrar-modal {
+#modal .contenedor-modal #cerrar-modal {
   position: absolute;
   background: none;
   border: 0;
   color: inherit;
   z-index: 20;
 }
-.modal .contenedor-modal .cerrar-modal .fas {
+#modal .contenedor-modal #cerrar-modal .fas {
   color: white;
   margin-top: 10px;
   margin-left: 740px;
 }
-.modal .contenedor-modal .header-modal {
+#modal .contenedor-modal .header-modal {
   display: flex;
   width: 770px;
   height: 350px;
   border-radius: 10px;
 }
-.modal .contenedor-modal .header-modal .backdrop-blur {
+#modal .contenedor-modal .header-modal .backdrop-blur {
   z-index: 25;
   border-radius: 10px;
   position: absolute;
@@ -52,14 +52,14 @@ body {
   filter: blur(6px);
   opacity: 0.8;
 }
-.modal .contenedor-modal .header-modal .backdrop-modal {
+#modal .contenedor-modal .header-modal .backdrop-modal {
   z-index: 15;
   border-radius: 0 10 0 10;
   position: absolute;
   width: 770px;
   height: auto;
 }
-.modal .contenedor-modal .header-modal .poster-modal {
+#modal .contenedor-modal .header-modal .poster-modal {
   z-index: 30;
   margin-top: 40px;
   margin-left: 40px;
@@ -67,12 +67,38 @@ body {
   height: 458px;
   background-color: crimson;
 }
-.modal .contenedor-modal .header-modal h2 {
+#modal .contenedor-modal .header-modal h2 {
   z-index: 30;
   margin-left: 40px;
   margin-top: 180px;
   font-size: 30px;
   color: crimson;
+}
+#modal .contenedor-modal .info-modal {
+  width: 770px;
+  height: 350px;
+  border-radius: 10px;
+}
+#modal .contenedor-modal .info-modal .linea {
+  height: 10px;
+  margin-left: 380px;
+}
+#modal .contenedor-modal .info-modal .genres, #modal .contenedor-modal .info-modal .year {
+  color: crimson;
+}
+#modal .contenedor-modal .info-modal .genres-info, #modal .contenedor-modal .info-modal .year-info {
+  padding-bottom: 10px;
+}
+#modal .contenedor-modal .info-modal .overview {
+  z-index: 50;
+  font-size: 16px;
+  margin-left: 380px;
+  margin-top: 120px;
+  margin-right: 40px;
+}
+
+.displayNone {
+  display: none !important;
 }
 
 #principal {

@@ -4,8 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.modal {
-    // display: none;
+#modal {
     display: flex;
     justify-content: center;
     .contenedor-blur {
@@ -25,7 +24,7 @@ body {
         height: 770px;
         background-color: rgb(248, 247, 247);
         border-radius: 10px;
-        .cerrar-modal {
+        #cerrar-modal {
             position: absolute;
             background: none;
             border: 0;
@@ -76,8 +75,38 @@ body {
                 font-size: 30px;
                 color: crimson;
             }
+            
+            
+        }
+        .info-modal {
+            width: 770px;
+            height: 350px;
+            border-radius: 10px;
+            .linea {
+                height: 10px;
+                margin-left: 380px;
+            }
+            .genres, .year {
+                color: crimson;
+            }
+            .genres-info, .year-info{
+                padding-bottom: 10px;
+            }
+            .overview {
+                z-index: 50;
+                font-size: 16px;
+                margin-left: 380px;
+                margin-top: 120px;
+                margin-right: 40px;
+            }
+            
         }
 }
+}
+
+
+.displayNone {
+    display: none !important;
 }
 
 
@@ -146,6 +175,8 @@ body {
         }
     }
 }
+
+
 
 
 @import "buscador";

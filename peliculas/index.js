@@ -26,8 +26,8 @@ function traerPeliculas(url, categoria) {
                 for (let i = 0; i < primerasPelis.length; i++) {
 
                     lis +=
-                        `<li> 
-                        <img src= "https://image.tmdb.org/t/p/original${primerasPelis[i].poster_path}">
+                        `<li > 
+                        <img class="peliculaImg" src= "https://image.tmdb.org/t/p/original${primerasPelis[i].poster_path}">
                         <p>${primerasPelis[i].title}</p>
                     </li>
                     `;
@@ -38,16 +38,56 @@ function traerPeliculas(url, categoria) {
                 // console.log("lis", lis);
 
                 ul.innerHTML = lis;
-                console.log("ul", ul)
+                // console.log("ul", ul)
             });
 
     }
 
 
-console.log(traerPeliculas(popular, "#pelis-popular"))
+traerPeliculas(popular, "#pelis-popular")
 traerPeliculas(topRated, "#pelis-topRated")
 traerPeliculas(upcoming, "#pelis-upcoming")
 traerPeliculas(nowPlaying, "#pelis-nowPlaying")
+
+
+// const peliculaImg = document.getElementsByClassName("img peliculaImg");
+// const agarrarModal = document.getElementById("modal");
+
+// const laCruz = document.getElementById("cerrar-modal");
+
+// console.log(peliculaImg)
+// console.log(agarrarModal);
+// console.log(laCruz)
+
+// peliculaImg.onclick = function () {
+//     agarrarModal.classList.remove("displayNone")
+// }
+
+// function cerrar () {
+//     agarrarModal.classList.add("displayNone")
+
+// }
+
+
+// laCruz.onclick = cerrar()
+
+// console.log(agarrarModal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
