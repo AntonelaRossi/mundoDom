@@ -4,8 +4,10 @@ const apiKey = "aaac14e6ce98e6590f7e57b4e08e1c14";
 
 const input = document.querySelector("input #search");
 const body = document.querySelector("body")
+const agarrarModal = document.getElementById("modal");
+const agarrarCruz = document.getElementById("cerrar-modal")
 
-const popular =  `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+const popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
 const topRated = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
 const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
 const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
@@ -14,35 +16,74 @@ const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${api
 
 function traerPeliculas(url, categoria) {
 
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data)
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
 
-                const ul = document.querySelector(categoria)
-                const primerasPelis = data.results.slice(0, 5);
-                let lis = '';
+            const ul = document.querySelector(categoria)
+            const primerasPelis = data.results.slice(0, 5);
 
-                for (let i = 0; i < primerasPelis.length; i++) {
+            let lis = '';
 
-                    lis +=
-                        `<li > 
-                        <img class="peliculaImg" src= "https://image.tmdb.org/t/p/original${primerasPelis[i].poster_path}">
+            for (let i = 0; i < primerasPelis.length; i++) {
+
+                lis +=
+                    `<li id=${primerasPelis[i].id} class= "lista-peliculas" > 
+                    
+                        
+                        <img src= "https://image.tmdb.org/t/p/original${primerasPelis[i].poster_path}" class="peliculaImg" >
+                       
                         <p>${primerasPelis[i].title}</p>
+                        </a>
                     </li>
                     `;
 
-                    // console.log(data.results[i].poster_path)
-                
-                }
-                // console.log("lis", lis);
+            }
 
-                ul.innerHTML = lis;
-                // console.log("ul", ul)
-            });
+            ul.innerHTML = lis;
 
-    }
+            document
+                .querySelectorAll("li.lista-peliculas")
+                .forEach(function (li) {
 
+                    li.addEventListener("click", function (e) {
+                        const peliculaId = e.currentTarget.id;
+
+                        fetch(`https://api.themoviedb.org/3/movie/${peliculaId}?api_key=${apiKey}`)
+                            .then(res => res.json())
+                            .then(data => {
+
+                                document.querySelector('#modal .title').innerHTML = data.original_title;
+                                document.querySelector('#modal .overview').innerHTML = data.overview;
+                                document.querySelector('#modal .posterModal').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+                                document.querySelector('#modal .backdropModal').src = `https://image.tmdb.org/t/p/w500${data.backdrop_path}`;
+                                document.querySelector('#modal .genresInfo').innerHTML = data.genre_id;
+                                document.querySelector('#modal .yearInfo').innerHTML = data.release_date;
+
+                                agarrarModal.classList.remove("displayNone")
+                                agarrarModal.classList.add("displayActive")
+                                agarrarCruz.classList.remove("displayNone")
+                                agarrarCruz.classList.add("displayActive")
+
+                            })
+
+                    })
+
+                })
+
+        });
+
+}
+
+
+function cerrar() {
+    // agarrarCruz.classList.remove("displayActive")
+    agarrarCruz.classList.add("displayNone")
+    agarrarModal.classList.add("displayNone")
+}
+
+agarrarCruz.onclick = cerrar
 
 traerPeliculas(popular, "#pelis-popular")
 traerPeliculas(topRated, "#pelis-topRated")
@@ -50,47 +91,16 @@ traerPeliculas(upcoming, "#pelis-upcoming")
 traerPeliculas(nowPlaying, "#pelis-nowPlaying")
 
 
-// const peliculaImg = document.getElementsByClassName("img peliculaImg");
-// const agarrarModal = document.getElementById("modal");
 
-// const laCruz = document.getElementById("cerrar-modal");
+// //AGREGAR PAGINAS INTERNAS DESDE DOM
+// const popularHome = document.getElementsByClassName("popular-home");
 
-// console.log(peliculaImg)
-// console.log(agarrarModal);
-// console.log(laCruz)
-
-// peliculaImg.onclick = function () {
-//     agarrarModal.classList.remove("displayNone")
-// }
-
-// function cerrar () {
-//     agarrarModal.classList.add("displayNone")
-
-// }
-
-
-// laCruz.onclick = cerrar()
-
-// console.log(agarrarModal);
+// popularHome.innerHTML = input
+// console.log(popularHome)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// EL INPUT
 // input.addEventListener('keypress', function (e) {
 
 //     if (e.keyCode === 13) {
@@ -121,11 +131,4 @@ traerPeliculas(nowPlaying, "#pelis-nowPlaying")
 
 // })
 
-// obtengo todos los elementos que necesito modificar ESTO ES PARA EL MODAL
-// const title = document.querySelector('.movie-info .title');
-// const rated = document.querySelector('#rated');
-// const year = document.querySelector('#year');
-// const genre = document.querySelector('#genre');
-// const description = document.querySelector('.movie-info .description');
 
-// const image = document.querySelector('#movie img');
