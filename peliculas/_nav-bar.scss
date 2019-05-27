@@ -13,6 +13,7 @@
     width: 90px;
     position: fixed;
     background-color: rgb(75, 73, 73);
+    cursor: pointer;
      
 }
 
@@ -22,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     .img {
     width: 40px;
     height: auto;
