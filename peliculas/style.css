@@ -82,9 +82,16 @@ body {
 #contenedor-peliculas li img {
   width: 100%;
   height: 100%;
+  transition: transform 0.2s;
+}
+#contenedor-peliculas li img:hover {
+  cursor: pointer;
+  position: relative;
+  transform: scale(1.1);
 }
 
 .input {
+  z-index: 2;
   position: fixed;
   background-color: #f8f7f7;
   display: flex;
