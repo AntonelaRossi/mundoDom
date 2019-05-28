@@ -16,20 +16,15 @@
 
     <section id="modal" class="displayNone" type="page">
         <div class="modal">
-
-
             <div id="contenedor-blur"></div>
             <div class="contenedor-modal">
                 <button id="cerrar-modal"><i class="fas fa-times"></i> </button>
-
-
                 <div class="header-modal">
                     <img class="backdropModal" src="https://image.tmdb.org/t/p/w500/5DUqFLgkLsJxyqPCAcgTivZy2SX.jpg"
                         alt="">
                     <div class="backdropBlur"></div>
                     <img class="posterModal" src="https://image.tmdb.org/t/p/original/3IGbjc5ZC5yxim5W0sFING2kdcz.jpg">
                     <h2 class="title">SOLO: A star wars movie</h2>
-
                 </div>
                 <div class="info-modal">
                     <p class="overview">Through a series of daring escapades deep within a dark and dangerous criminal
@@ -41,7 +36,6 @@
                     <p class="linea year">RELEASE DATE</p>
                     <p class="linea yearInfo">15 May 2018</p>
                 </div>
-
             </div>
 
         </div>
@@ -305,58 +299,63 @@
                     <img class="img" src="./img/avengers.jpg" alt="">
                 </div>
 
-                <div id="contenedor-peliculas">
-                    <div class="pelis popular" >
+                <div id="contenedor-peliculas" class= "view-on-home">
+                    <div class="pelis popular displayActive view-on-home">
                         <div class="header-pelis">
                             <span> Popular Movies</span>
-                            <button type="button">View all <i class="fas fa-long-arrow-alt-right"
+                            <button type="button" class="view-popular">View all <i class="fas fa-long-arrow-alt-right"
                                     style="color: crimson"></i> </button>
                         </div>
                         <ul id="pelis-popular">
                             <!-- lis -->
                         </ul>
+                        <button type="submit" id="load-more" class="displayNone">LOAD MORE</button>
                     </div>
-                    <div class="pelis top-rated">
+                    <div class="pelis top-rated displayActive view-on-home">
                         <div class="header-pelis">
                             <span> Top Rated</span>
-                            <button type="button">View all <i class="fas fa-long-arrow-alt-right"
+                            <button type="button" class="view-top-rated" >View all <i class="fas fa-long-arrow-alt-right"
                                     style="color: crimson"></i> </button>
                         </div>
                         <ul id="pelis-topRated">
                             <!-- lis -->
                         </ul>
+                        <button type="submit" id="load-more" class="displayNone">LOAD MORE</button>
                     </div>
-                    <div class="pelis upcoming">
+                    <div class="pelis upcoming displayActive view-on-home">
                         <div class="header-pelis">
                             <span> Upcoming</span>
-                            <button type="button">View all <i class="fas fa-long-arrow-alt-right"
+                            <button type="button" class="view-upcoming">View all <i class="fas fa-long-arrow-alt-right"
                                     style="color: crimson"></i> </button>
                         </div>
                         <ul id="pelis-upcoming">
                             <!-- lis -->
                         </ul>
+                        <button type="submit" id="load-more" class="displayNone">LOAD MORE</button>
                     </div>
-                    <div class="pelis now-playing">
+                    <div class="pelis now-playing displayActive view-on-home">
                         <div class="header-pelis">
                             <span> Now Playing</span>
 
-                            <button type="button">View all <i class="fas fa-long-arrow-alt-right"
+                            <button type="button" class="view-now-playing">View all <i class="fas fa-long-arrow-alt-right"
                                     style="color: crimson"></i> </button>
                         </div>
                         <ul id="pelis-nowPlaying">
                             <!-- lis -->
                         </ul>
+                        <button type="submit" id="load-more" class="displayNone">LOAD MORE</button>
                     </div>
                     <div class="pelis buscador">
-                            <div class="header-pelis">
-                                <span> Resultados </span>
-                        
-                            </div>
-                            <ul id="pelis-buscador" class="displayNone">
-                                <!-- lis -->
-                            </ul>
+                        <div class="header-pelis">
+                            <span> Resultados </span>
+
                         </div>
-                
+                        <ul id="pelis-buscador" class="displayNone">
+                            <!-- lis -->
+                        </ul>
+                        <button type="submit" id="load-more" class="displayNone" >LOAD MORE</button>
+                    </div>
+
                 </div>
 
             </div>

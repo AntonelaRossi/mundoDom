@@ -38,6 +38,8 @@ body {
   padding-top: 50px;
   padding-right: 30px;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
 }
 #contenedor-peliculas .pelis .header-pelis {
   display: flex;
@@ -65,6 +67,27 @@ body {
   justify-content: space-between;
   flex-wrap: wrap !important;
   cursor: pointer;
+}
+#contenedor-peliculas .pelis #load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  background-color: crimson;
+  color: #f8f7f7;
+  outline: none;
+  text-decoration: none;
+}
+#contenedor-peliculas .pelis #load-more button:focus {
+  outline: none;
+}
+#contenedor-peliculas .pelis #load-more button:hover {
+  cursor: pointer;
+  position: relative;
+  transform: scale(1.1);
 }
 #contenedor-peliculas li {
   display: flex;
@@ -128,6 +151,9 @@ body {
 }
 
 .loguito {
+  position: relative;
+  top: 0;
+  left: 0;
   background-color: crimson;
   display: flex;
   justify-content: center;
@@ -249,10 +275,11 @@ body {
 }
 .modal .contenedor-modal .info-modal .genresInfo, .modal .contenedor-modal .info-modal .yearInfo {
   padding-bottom: 10px;
+  font-size: 14px;
 }
 .modal .contenedor-modal .info-modal .overview {
   z-index: 50;
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 380px;
   margin-top: 70px;
   margin-right: 40px;
