@@ -7,7 +7,7 @@ const agarrarModal = document.getElementById("modal");
 const agarrarCruz = document.getElementById("cerrar-modal")
 
 //buscador
-const paginaActual = 1;
+let paginaActual = 1;
 
 //para la home
 const popular = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
@@ -16,10 +16,10 @@ const upcoming = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
 const nowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
 
 // para las paginas internas
-const popularTodas = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${paginaActual}`
-const topRatedTodas = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${paginaActual}`
-const upcomingTodas = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${paginaActual}`
-const nowPlayingTodas = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${paginaActual}`
+const popularTodas = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
+const topRatedTodas = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`
+const upcomingTodas = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`
+const nowPlayingTodas = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`
 
 //para las paginas internas
 const banner = document.querySelector("#banner")
@@ -39,7 +39,7 @@ const categoriaNowPlaying = document.querySelector("#pelis-nowPlaying")
 
 //atajos
 const inicio = document.querySelector(".loguito")
-const loadMore = document.querySelector("#load-more")
+const loadMore = document.querySelectorAll("#load-more")
 
 // ONCLICK
 // selecciono de la NAV BAR los botones
@@ -98,18 +98,6 @@ function modal() {
 
 }
 
-//load more
-
-loadMore.addEventListener("click", function () {
-
-    for (let i = 0; i < 1000; i++) {
-        paginaActual++
-
-    }
-    traerCategorias(popularTodas, categoriaPopular)
-})
-
-// loadMore.onclick = () => traerCategorias(popularTodas, categoriaPopular)
 
 //trae peliculas a la Home
 function traerPeliculas(url, categoria) {
@@ -187,10 +175,15 @@ function homeActive() {
     categoriaNowPlaying.classList.add("displayActive")
 }
 
-//load more
+
 function loadMoreOn() {
-    loadMore.classList.remove("displayNone")
-    loadMore.classList.add("displayActive")
+
+    for (let i = 0; i < loadMore.length; i++) {
+        loadMore[i].classList.remove("displayNone");
+        
+    }
+ 
+    // loadMore.classList.add("displayActive")
 }
 
 // traer peliculas por categoria tocando la nav-bar
@@ -204,7 +197,6 @@ function traerCategorias(urlInternas, categoriaElegida, divHide1, divHide2, divH
             // console.log(data)
 
             const ul = categoriaElegida
-            // const divPopular = document.querySelector(".pelis .popular")
 
             let lis = '';
             for (let i = 0; i < data.results.length; i++) {
@@ -218,25 +210,64 @@ function traerCategorias(urlInternas, categoriaElegida, divHide1, divHide2, divH
                     `;
             }
 
-            ul.innerHTML = lis;
+            ul.innerHTML = lis
             ul.classList.remove("displayNone")
             ul.classList.add("displayActive")
             marginSuperior.style.marginTop = "70px"
-
-            divHide1.classList.remove("displayActive")
-            divHide2.classList.remove("displayActive")
-            divHide3.classList.remove("displayActive")
-            divHide4.classList.remove("displayActive")
 
             divHide1.classList.add("displayNone")
             divHide2.classList.add("displayNone")
             divHide3.classList.add("displayNone")
             divHide4.classList.add("displayNone")
-            modal()
-            loadMoreOn()
-            console.log(ul)
+            modal() //activa onclick de modal
+            loadMoreOn() //muestra el boton 
 
-        })
+            //load more
+            for (let i = 0; i < loadMore.length; i++) {
+                
+                
+           
+            loadMore[i].addEventListener("click", function () {
+
+                paginaActual = paginaActual + 1
+                console.log(paginaActual)
+
+                //aca vuelvo a ser el fetch para las proximas pelis
+                
+                fetch(`${urlInternas}&page=${paginaActual}`)
+                    .then(res => res.json())
+                    .then(data => {
+                    const ul = categoriaElegida
+            
+
+                    let lis = '';
+                    for (let i = 0; i < data.results.length; i++) {
+
+                    lis +=
+                        `<li id=${data.results[i].id} class= "lista-peliculas" > 
+                            <img src= "https://image.tmdb.org/t/p/original${data.results[i].poster_path}" class="peliculaImg" >
+                            <p>${data.results[i].title}</p>
+                            </a>
+                        </li>
+                        `;
+                    }
+
+                    ul.innerHTML = lis
+                    ul.classList.remove("displayNone")
+                    ul.classList.add("displayActive")
+                    marginSuperior.style.marginTop = "70px"
+
+                    divHide1.classList.add("displayNone")
+                    divHide2.classList.add("displayNone")
+                    divHide3.classList.add("displayNone")
+                    divHide4.classList.add("displayNone")
+                    modal()
+    
+                    })
+
+            })
+        }
+})
 }
 
 // onclick en cada boton de la nav, le aplico la funcion que las trae
