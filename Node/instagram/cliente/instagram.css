@@ -1,0 +1,72 @@
+body {
+    background-color: #fafafa
+  }
+   
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+  }
+    
+  .box{
+      border: 1px solid #ebebeb;
+      margin: 20px;
+      width: 300px;
+      background-color: #fff;
+      margin: 10px;
+      border-radius: 1px;
+  }
+  
+  .img{
+    padding: 20px;
+  }
+  
+  .img img{
+    width: 100%;
+    height: 250px;
+  }
+  
+  .far.fa-heart {
+  margin-left: 20px;
+  }
+  
+  .likes {
+    font-weight: 600;
+    color: #262626;
+    font: inherit;
+   font-weight: bold;
+   margin-left: 20px;
+   font-family: 'Roboto', sans-serif;
+  }
+  
+  .epigraph {
+    font-weight: 600;
+    color: #262626;
+    font: inherit;
+   margin-left: 20px;
+   font-family: 'Roboto', sans-serif;
+  }
+  
+  .comment {
+    font-weight: 600;
+    color: #262626;
+    font: inherit;
+   margin-left: 20px;
+   font-family: 'Roboto', sans-serif;
+  }
+  
+  .far.fa-user-circle {
+    margin-left: 20px;
+    margin-top:  20px;
+  }
+  
+  .green {
+    color: rgb(17, 245, 157);
+  }
+  
+  input {
+    border: none;
+  }
+  
+  
