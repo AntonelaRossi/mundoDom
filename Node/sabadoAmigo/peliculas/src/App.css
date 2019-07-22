@@ -1,0 +1,77 @@
+.App {
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.logo-navbar {
+  width: 50px;
+  height: 50px;
+}
+
+.form-navbar {
+  width: 1000px;
+  height: 20px;
+  border: none;
+  padding: 20px;
+}
+
+.login {
+  padding: 20px;
+}
+
+#hero {
+  position: relative;
+}
+
+.img-hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+}
+
+.h1-hero {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  z-index: 100;
+  color: rgb(221, 52, 52);
+  font-size: 100px;
+}
+
+.p-hero {
+  position: absolute;
+  top: 80%;
+  right: 10%;
+  z-index: 110;
+  color: rgb(243, 204, 28);
+  font-size: 40px;
+}
+
+.movies-container {
+  padding: 60px;   
+}
+
+.movies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+
+.img-movie {
+  width:200px;
+  height: auto;
+  margin: 15px;
+}
+
+.title-movie {
+  text-align: center;
+  width: 200px;
+}
