@@ -13,9 +13,9 @@ class Main extends Component {
             <main>
                 <Hero />
                 
-                <MoviesCategory category="popular" title="Popular"/>
+                <MoviesCategory category="popular" title="Popular"  />
                 <MoviesCategory category="top_rated" title="Top Rated"/>
-                <MoviesCategory category="upcoming" title="Upcoming"/>
+                <MoviesCategory category="upcoming" title="Upcoming" />
                 <MoviesCategory category="now_playing" title="Now Playing"/>
 
             </main>

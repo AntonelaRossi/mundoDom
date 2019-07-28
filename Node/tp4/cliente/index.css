@@ -1,4 +1,9 @@
 .container {
     margin: 30px;
     font-family: 'Varela Round', sans-serif
+    
 }
+
+.table .table-hover {
+    font-size: 14px
+} 

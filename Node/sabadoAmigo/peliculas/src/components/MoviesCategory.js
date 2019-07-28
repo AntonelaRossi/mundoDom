@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Movie from "./Movie"
 
 const API_KEY = "aaac14e6ce98e6590f7e57b4e08e1c14";
-
-//este es un componente de clase(constructor) tiene logica, sirve cuando el componente interactua con apis, tiene ESTADOS 
+ 
 class MoviesCategory extends Component {
     constructor(props) {
         super(props);
@@ -32,7 +31,7 @@ class MoviesCategory extends Component {
                 <h2>{this.props.title}</h2>
 
                 <div className="movies">
-                    {this.state.movies.map(m => <Movie data={m}/>)}
+                    {this.state.movies.map(m => <Movie handleModal={this.props.handleModal} data={m}/>)}
 
                 </div>
 
@@ -45,3 +44,5 @@ class MoviesCategory extends Component {
 
 
 export default MoviesCategory;
+
+// handleModal={this.props.handleModal}
