@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FORMULARIOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="formulario.css">
+
+</head>
+
+<body>
+    <form action="./ejemplo.html" method="get" name="form_ejemplo">
+
+        Nombre
+        <input placeholder="Escribi tu nombre" value="" type="text" name="firstname" id="nombre">
+        Edad
+        <input placeholder="Edad" value="" type="text" name="" id="edad">
+        <br />
+        <br />
+        
+        <input type="radio" name="estadoCivil" value="Estado Civil" checked> Solterx
+    
+        <input type="radio" name="estadoCivil" value="Estado Civil" checked> Casadx
+      
+        <input type="radio" name="estadoCivil" value="Estado Civil" checked> Viudx
+   
+        <br />
+        <br />
+       
+        Nacionalidad
+        <select name="Nacionalidad">
+            <option value="arg">Argentina</option>
+            <option value="peru">Peruana</option>
+            <option value="vnzl">Venezolana</option>
+        </select>
+
+        <br />
+        <br />
+
+        <!-- Deja tu mensaje
+        <br />
+        <textarea name="message" rows="10" cols="30">
+
+          </textarea>
+
+        <br />
+        <br /> -->
+
+        <!-- Password:
+        <br />
+        <input type="password" name="psw">
+
+        <br />
+        <br />
+        <!-- Tipos de input:
+        <a href="https://www.w3schools.com/html/html_form_input_types.asp">
+            https://www.w3schools.com/html/html_form_input_types.asp</a> --> 
+
+
+        <input type="submit" name="submit" value="Enviar" />
+
+
+        <!-- <form action="guardar_usuario.html" name="login" id="check">
+            <input type="checkbox" name="pet" value="cat" checked> Gato
+            <input type="checkbox" name="pet" value="dog"> Perro
+        </form> -->
+
+
+
+
+        <script src="formulario.js"></script>
+</body>
+
+</html>

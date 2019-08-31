@@ -1,0 +1,60 @@
+body {
+    background-color: #FAFAFA;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.caja {
+    width: 450px;
+    height: 550px;
+    border: #e2d9d9 1px solid;
+    margin: 20px;
+    background-color:#ebebeb 
+}
+
+.img {
+    padding: 2%;
+}
+
+.img img {
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
+}
+
+.titulo {
+    font-size: 40px;
+}
+
+.far.fa-heart {
+    margin-left: 5%;
+}
+
+.fas.fa-heart {
+    margin-left: 5%;
+}
+
+.comentario {
+    font-weight: bold;
+}
+
+.rojo {
+    color: red
+
+}
+
+.inputsss {
+    margin-left: 5%; 
+    border: 0;
+    background-color: #ebebeb 
+}
+
+#likes {
+    padding-left: 5%; 
+    font-weight: bold;
+}

@@ -1,0 +1,24 @@
+body {
+    background-color: aquamarine;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+ }
+ 
+input {
+    display: flex;
+    justify-content: center;
+}
+ div {
+    margin-top: 30px;
+ }
+ 
+ .error1 {
+    background-color: pink;
+    border: 1px red solid;
+ }
+ 
+ .error2 {
+    background-color: violet;
+    border: 1px purple;
+ }

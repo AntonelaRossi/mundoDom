@@ -1,0 +1,40 @@
+// ESTO ES UN PARCIAL
+
+
+// .movie-info h2.title {
+//     color: $primary-color;
+//     font-weight: 900;
+// }
+
+// o ANIDADO
+
+
+
+.movie-info {
+    
+    
+    
+    
+    
+
+    h2.title {
+        color: $primary-color;
+        font-weight: 900;
+        @include v-center;
+    }
+    .written-by {
+        strong {
+        font-weight: 900;
+        color: blue;
+        }
+        span {
+            @include truncate(50px);
+        }
+    }
+
+    #rated {
+        @include opacidad(0.5);
+    }
+
+
+}
